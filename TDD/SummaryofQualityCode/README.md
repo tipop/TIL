@@ -29,19 +29,19 @@
 ## 3. 기초
 * [생성자 부트스트랩하기](CreatorBoostrap.java)
 * getter(), setter() 테스트 하기
-* [상수를 공유하라](https://github.com/tipop/TDD/blob/master/Share%20constant.java)
+* [상수를 공유하라](ShareConstant.java)
 * 로컬 범위에서 재정의하라.
 * 일시적으로 교체하라.
 * 캡슐화하고 오버라이딩하라.
 * 노출도를 조정하라 (private -> protected)
 * 주입에 의한 검증
 * 이름 없는 데이터에 이름을 부여하라.
-* [루프 조건을 캡슐화하라](https://github.com/tipop/TDD/blob/master/InfiniteLoop.java)
-* [에러 주입](https://github.com/tipop/TDD/blob/master/Error%20Injection.java)
-* [협업자를 대체시켜라](https://github.com/tipop/TDD/blob/master/Collaborator%20Double.java)
+* [루프 조건을 캡슐화하라](InfiniteLoop.java)
+* [에러 주입](ErrorInjection.java)
+* [협업자를 대체시켜라](CollaboratorDouble.java)
 ## 4. 병렬 처리
-* [공용 lock 으로 동기화하라](https://github.com/tipop/TDD/blob/master/lock%20synchronization.java)
-* [감시 제어를 사용하라](https://github.com/tipop/TDD/blob/master/RaceCondition.java)
+* [공용 lock 으로 동기화하라](LockSynchronization.java)
+* [감시 제어를 사용하라](RaceCondition.java)
 
 ## 5. Practice
 * [WebRetriever](https://github.com/srvance/QualityCode14)
