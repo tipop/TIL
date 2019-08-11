@@ -3,7 +3,7 @@
 This repository contains my personal learning about software developement.
 
 * [TDD](TDD/README.md)
-* [Agile](https://github.com/tipop/Agile/wiki/Agile)
+* [Agile](/Agile/README.md)
 * C#
 * C++
 * Debugging & Reversing
