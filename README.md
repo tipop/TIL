@@ -8,4 +8,4 @@ This repository contains my personal learning about software developement.
 * C++
 * Debugging & Reversing
 * Windows Device Driver
-* [Soft Skill](Soft-Skill/README.md)
+* [Soft Skill](SoftSkill/README.md)
