@@ -1,8 +1,5 @@
 # Hello. I'm Shin, Sangyun. 
 
-This repository contains my personal learning about software developement.
+(TIL) Today I Learned
 
- - C++ API
- - Modern C++
- - Windows
- 
+This repository contains my personal learning about software developement.
