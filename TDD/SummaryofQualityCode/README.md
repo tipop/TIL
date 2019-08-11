@@ -1,5 +1,5 @@
 # Summary of Quality Code
-
+![](http://acornpub.co.kr/tb/detail/book/rp/it/1488450369ln0cbKxY.jpg)
 ## 1. 뭐부터 하지?
 *   [Happy Path](https://www.h2kinfosys.com/blog/happy-path-testing/) 부터 테스트하라.
 *   Workaround path를 테스트하라.
