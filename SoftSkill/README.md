@@ -1,4 +1,5 @@
 # Soft Skill
+![](https://miro.medium.com/max/800/0*fjVqfkc6dgsF-gL8.jpg)
 
 ### 3장 목표를 설정하고 미래에 대비하라 
 
