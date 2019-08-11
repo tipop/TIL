@@ -27,7 +27,7 @@
 * 프레임워크를 테스트하지 마라.
 * 자동 생성된 코드를 테스트하지 마라.
 ## 3. 기초
-* [생성자 부트스트랩하기](https://github.com/tipop/TDD/blob/master/CreatorBoostrap.java)
+* [생성자 부트스트랩하기](CreatorBoostrap.java)
 * getter(), setter() 테스트 하기
 * [상수를 공유하라](https://github.com/tipop/TDD/blob/master/Share%20constant.java)
 * 로컬 범위에서 재정의하라.
