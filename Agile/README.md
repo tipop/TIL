@@ -8,4 +8,7 @@
 2) Release 는 몇 개의 스프린트를 묶어서 할 수 있다.
 3) CI/CD에 unit test가 포함되어 퀄리티를 높인다.
 4) TDD 개발 방법을 사용하면 처음부터 비지니스 코드가 테스트 가능한 이음매를 가질 수 있다.
-4) Done 조건은 happy path, workaround path and error path를 모두 white box and block box 테스트에서 테스트되어야 한다.
+4) Done 조건은 아래 경로가 모두 테스트되어야 한다. (white box test에서는 모두 테스트 되어야 하며, error path test를 QA팀에 미루면 안된다.)
+  - happy path
+  - workaround path
+  - error path
