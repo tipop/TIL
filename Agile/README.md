@@ -16,4 +16,9 @@
   - error path
 
 ### 새로운 개발 패러다임
-Agile 실천 방법
+Agile 실천 방법을 실천하지 않으면 Agile로 개발한다고 할 수 없다. 
+  - Defines detailed feature specification before development
+  - TDD and unit test (happy / workaournd / error path)
+  - CI/CD (Contineous Integration / Contineous Deployment)
+  - Iterative Improvement Development
+  
