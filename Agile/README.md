@@ -16,9 +16,16 @@
   - error path
 
 ### 새로운 개발 패러다임
+Agile 한다는 것은 새로운 개발 패러다임을 따르는 것이다. 
 Agile 실천 방법을 실천하지 않으면 Agile로 개발한다고 할 수 없다. 
   - Defines detailed feature specification before development
   - TDD and unit test (happy / workaournd / error path)
   - CI/CD (Contineous Integration / Contineous Deployment)
   - Iterative Improvement Development
   
+출시 가능한 제품 증분이 매 스프린트마다 나오려면, 필수적으로 unit test가 CI에 포함되어야 한다.
+그 말은 모든 개발자는 TDD로 개발하여 unit test가 나와야 한다는 것이다.
+이제 코드리뷰를 할 때 비지니스 로직 보다는 unit test를 리뷰하여 빼먹은 test가 있는지 확인한다.
+Pair programmnig도 nice to have 활동으로서 TDD 방식으로 하면 좋다.
+한 사람은 unit test를 먼저 만들고, 다른 사람은 unit test를 통과하는 business logic을 만든다. 
+30초에서 1분 간격으로 반복되어 프로그래밍이 즐겁고 실력 향상에 도움이 된다.
