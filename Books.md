@@ -22,8 +22,8 @@
 
 읽고 싶은 책들
 ----------------------------------------------
-Modern C++ Programming Cookbook
-객체지향의 사실과 오해
-오브젝트
-Working effectively with legacy code
-여행의 이유
+* Modern C++ Programming Cookbook
+* 객체지향의 사실과 오해
+* 오브젝트
+* Working effectively with legacy code
+* 여행의 이유
