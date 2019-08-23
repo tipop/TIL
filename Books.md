@@ -19,9 +19,12 @@
 * 살인자의 기억법 (4)
 * 객체지향의 사실과 오해
 
+### 9월
+* 오브젝트
+* Modern C++ Programming Cookbook
+* 마스터리의 법칙
+
 ### 읽고 싶은 책들
 ----------------------------------------------
-* Modern C++ Programming Cookbook
-* 오브젝트
 * Working effectively with legacy code
 * 여행의 이유
