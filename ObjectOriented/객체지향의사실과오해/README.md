@@ -1,4 +1,4 @@
-[객체 지향의 사실고 오해](https://book.naver.com/bookdb/book_detail.nhn?bid=9145968)
+[객체 지향의 사실과 오해](https://book.naver.com/bookdb/book_detail.nhn?bid=9145968)
 
 ## 1. 협력하는 객체들의 공동체
 #### 객체지향의 본질
