@@ -1,6 +1,6 @@
 ## 1. Learning Modern Core Language Features
 ### AAA - Almost Always Auto
-가능하면 항상 auto를 써라.
+[가능하면 항상 auto를 써라.](Chapter1/AAA.cpp)
 
 #### Benefits
 타입을 추론해야 하므로 auto에서는 초기값 없는 변수 선언이 불가능 하다.
