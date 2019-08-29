@@ -8,11 +8,11 @@
 auto를 사용하면 항상 정확한 타입을 사용하게 된다. 암시적 변환이 일어나지 않는다.
 
 ```C++
-	auto vv = std::vector<int>{ 1,2,3 };
-	int size1 = v.size();
+auto vv = std::vector<int>{ 1,2,3 };
+int size1 = v.size();
 
-	auto size2 = v.size();
-	auto size3 = int{ v.size() };
+auto size2 = v.size();
+auto size3 = int{ v.size() };
 ```
 
 auto 사용은 구현이 아니라 interface 지향 개발이 되기에 good object-oriented을 촉진한다.
