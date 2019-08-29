@@ -1,3 +1,26 @@
+#pragma once
+
+class Chaper1
+{
+public:
+	static void usingAutoWheneverPossible();
+
+private:
+	template <typename F, typename T>
+	static auto apply(F&& f, T value);
+};
+
+class foo
+{
+	int myX;
+
+public:
+	foo(int const x = 0) : myX{ x } {}
+	int& get() { return myX; }
+};
+
+//////////////////////////////////////////////
+
 #include "stdafx.h"
 #include "Chaper1.h"
 #include <iostream>
