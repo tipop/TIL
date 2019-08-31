@@ -1,10 +1,8 @@
 ## 1. Learning Modern Core Language Features
-### AAA - Almost Always Auto
+## AAA - Almost Always Auto
 [가능하면 항상 auto를 써라.](Chapter1/AAA.cpp)
 
-#### Benefits
 타입을 추론해야 하므로 auto에서는 초기값 없는 변수 선언이 불가능 하다.
-
 auto를 사용하면 항상 정확한 타입을 사용하게 된다. 암시적 변환이 일어나지 않는다.
 
 ```C++
@@ -35,3 +33,5 @@ auto로 선언하는 것은 항상 오른쪽에 타입이 존재하는 일관성
 int* pInt = new int(42);
 auto pAuto = new int(42);
 ```
+
+##
