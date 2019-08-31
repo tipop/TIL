@@ -29,3 +29,4 @@
 ----------------------------------------------
 * Working effectively with legacy code
 * 여행의 이유
+* [More Effective Agile](https://www.amazon.com/More-Effective-Agile-Roadmap-Software/dp/1733518207/ref=olp_product_details?_encoding=UTF8&me=)
