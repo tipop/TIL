@@ -35,7 +35,7 @@ auto pAuto = new int(42);
 ```
 
 ## Creating type aliases and alias templates
-typedef 대신 using을 써라
+#### typedef 대신 using을 써라
 ```C++
 using byte = unsigned char;
 using pbyte = unsigned char *;
