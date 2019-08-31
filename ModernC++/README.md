@@ -52,7 +52,49 @@ fn* f = func;
 
 ## Understanding uniform initialization
 #### Getting Ready
+```C++
 std::string s1("test);   // direct initialization
 std::string s2 = "test"; // copy initialization
 
-#### = 
+T object {other};   // direct list initialization
+T object = {other}; // copy list initialization
+```
+
+```C++
+// Standard containers:
+std::vector<int> v {1, 2, 3};
+std::map<int, std::string> m { {1, "one"}, {2, "two} };
+
+// Dynamically allocated arrays:
+int* arr2 = new int[3] { 1, 2, 3};
+
+// Arrays:
+int arr1[3] {1, 2, 3};
+
+// Built-in types:
+int i { 42 };
+double d { 1.2 };
+
+// User-defined types:
+class foo
+{
+  int myA;
+  double myB;
+public:
+  foo():myA(0, myB(0) {}
+  foo(int a, double b = 0.0): myA(a), myB(b) {}
+};
+
+foo f1{};
+foo f2{ 42, 1.2 };
+foo f3{ 42 };
+
+// User-defined POD types:
+struct bar 
+{
+  int a;
+  int b;
+};
+
+bar b { 42, 1.2 };
+```
