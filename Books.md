@@ -19,13 +19,13 @@
 * [살인자의 기억법 (4)](https://book.naver.com/bookdb/book_detail.nhn?bid=7262295)
 * [객체지향의 사실과 오해 (1.8)](https://book.naver.com/bookdb/book_detail.nhn?bid=9145968)
 
-### September
+### September (4)
 * [역발상 주식 투자](https://book.naver.com/bookdb/book_detail.nhn?bid=12210510)
 * [권력의 법칙](https://book.naver.com/bookdb/book_detail.nhn?bid=5442662)
 * [오브젝트](https://book.naver.com/bookdb/book_detail.nhn?bid=15007773)
 * [Modern C++ Programming Cookbook](https://www.amazon.com/Modern-Programming-Cookbook-multithreading-networking/dp/1786465183)
 
-### October
+### October (4)
 * [BDD in Action](https://www.amazon.com/BDD-Action-Behavior-driven-development-lifecycle/dp/161729165X)
 * [Complete Guide to Test Automation](https://www.amazon.com/Complete-Guide-Test-Automation-Maintaining-ebook/dp/B07FKGVQP6)
 * [마케팅 불변의 법칙](https://book.naver.com/bookdb/book_detail.nhn?bid=5121615)
