@@ -1,4 +1,6 @@
-WinAppDriver with Appium
+[WinAppDriver with Appium](https://github.com/microsoft/WinAppDriver)
 
-* Notepad Test
+* Notepad Test (Win32)
+* Calculator Test (WPF)
+* Paint Test
 
