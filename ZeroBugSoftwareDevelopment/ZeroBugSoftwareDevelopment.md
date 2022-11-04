@@ -37,12 +37,13 @@ TDD를 처음 제안한 Kent Back, 이를 이어받아 개선시킨 Martin Folwe
 
 ### 돌도끼에서 망치로
 돌도끼에서 망치로 진화한 것 만큼 근래 20년 동안 소프트웨어 개발 방법에 많은 개선이 이루어졌습니다.
-20년전 waterfall model로 시작해서 V model을 거쳐 지금은 Agile 방법이 대세를 이루고 있습니다.
+20년전 waterfall model로 시작해서 V model을 거쳐 지금은 Agile과 DevOps 방법이 대세를 이루고 있습니다.
+![Waterfall_Agile_DevOps](Waterfall_Agile_DevOps.png)
 미래에는 컴파일 시점에 모든 런타임 버그를 발견해주는 새로운 프로그래밍 언어가 출시되어 테스트를 할 필요가 없는 날이 올 수도 있고, 인간 대신 AI가 버그 없는 완벽한 코드를 생산하는 날이 오거나, Test AI가 알파고 바둑처럼 모든 경우의 수를 시나리오로 만들어서 자동으로 테스트하는 날이 올 수도 있습니다.
 그러나 test.ai가 발전하고 있지만 아직은 자율주행처럼 시기상조입니다.
 
-### Agile
-여기서 소개하는 방법들은 Agile의 핵심 실천 방법들입니다.
+### Agile & DevOps
+여기서 소개하는 방법들은 Agile과 DevOps의 핵심 실천 방법들입니다.
 즉, Agile로 개발한다는 것은 TDD 방식으로 생산된 unit test code가 CI(Continueos Integration)와 CD(Continues Deployment)의 입력으로 들어가서 test automation 방식으로 매일 테스트를 통과하여 실행 가능한 증분 모듈이 만들어지는 것을 뜻합니다.
 Agile의 범위는 여기에서 소개하는 핵심 실천 방법보다 더 광범위하기 때문에 여기에서는 Agile을 소개하는 방식으로 이야기하지 않고 버그를 줄이기 위해 어떻게 해야하는지에 초점을 맞출 것입니다.
 
@@ -101,10 +102,23 @@ QA팀에서 더 꼼꼼하게 테스트하고, 더 많은 test cases를 테스트
 성공하는 테스트 케이스에 문제가 없는 것을 확인한 후 QA팀에 모듈을 넘기고 QA팀에서도 운이 나쁘면 버그를 발견하지 못하고 고객이 처음 버그를 발견하게 됩니다. 너무나 익숙한 상황입니다.
 
 개발자와 QA팀에서 다양한 시나리오를 확인해보지 않았기 때문에 버그를 발견하지 못했습니다.
-개발자와 QA팀에서 최선을 다해서 꼼꼼히 테스트 했는데 이렇게 말하면 너무 가혹한가요?
-그러나 성공하는 케이스 뿐만 아니라 failure cases, exceptional cases, stress cases, edge cases들도 테스트해야 합니다.
+성공하는 케이스 뿐만 아니라 failure cases, exceptional cases, stress cases, edge cases들도 테스트해야 합니다.
 그리고 다양한 하드웨어, 네트워크 환경, 데이터베이스에 대한 테스트를 통과한 모듈한 모듈만이 배포될 수 있습니다.
 코드가 변경될 때 마다 이런 수천건의 테스트가 수행되어야 매일 커밋되는 코드, 모듈, 소프트웨어 품질을 높게 유지할 수 있습니다.
+
+고객에게 버그가 보고되면 사내에서 버그 원인을 찾기 위해서는 어차피 재현 환경 및 조건을 똑같이 구성해서 재현해 볼 수 밖에 없습니다.
+결국 고객이 발견하기 전에 먼저 버그를 발견하면 되는 문제입니다.
+
+> 버그가 유저에게 전달되는 이유는 단지 발견하지 못했기 때문입니다
+
+
+### 테스트 시나리오와 경우의 수
+> 208,1681,9938,1979,9846,9947,8633,3448,6277,0286,5224,5388,4530,5484,2563,9456,8209,2741,9612,7380,1537,8525,6484,5169,8519,6439,0725,9916,0156,2812,8546,0898,8831,4427,1297,1531,9317,5577,3662,0397,2470,6484,0935
+
+[바둑판에서 배치 가능한 경우의 수](https://www.a-ha.io/questions/408e574152f2327099f1f53fe4454f4f)는 10의 171제곱의 수입니다. 우주 전체 원자의 갯수 10의 80승보다 훨씬 많습니다.
+![바둑판](NumberOfLegalGoPositions.png)
+
+현실에서 일어날 수 있는 모든 시나리오 경우의 수를 테스트하는 것은 어렵기 때문에 여기에도 전략이 필요합니다.
 
 ## 3. 매뉴얼 테스트의 한계
 매번 마우스로 클릭하거나 키보드를 두드리는 테스트를 매뉴얼 테스트라고 합니다.
@@ -113,19 +127,48 @@ QA팀에서 더 꼼꼼하게 테스트하고, 더 많은 test cases를 테스트
 코드가 변경될 때 마다 또는 매일 수천건의 테스트를 수행해야 하는데 컴퓨터는 수 십 만번 반복시켜도 실수하지 않으며 100% 정확하고 빠릅니다.
 
 **그렇다면 왜 지금까지 테스트를 컴퓨터에게 시키지 않았을까요?**
-다양한 이유가 있겠지만 방법을 몰랐거나, 툴이 없었거나 unittest를 코딩하면 개발이 지체된다고 생각해서 손으로 빨리 테스트했을 수도 있고, UI 테스트는 자동화 시킬 수 없는 영역이라고 생각했을 수도 있습니다.
-지금은 unit test 도구도 IDE에 내장되어 있으며 CI와 CD를 위한 서비스도 충분하고, test automation tool도 충분하기 때문에 마음만 먹으면 Agile 시스템을 도입할 수 있습니다.
+다양한 이유가 있겠지만 방법을 몰랐거나, 적절한 tool이 없었거나 unittest가 개발을 늦춘다고 생각해서 손으로 빨리 테스트했을 수도 있고, UI 테스트는 자동화 시킬 수 없는 영역이라고 생각했을 수도 있습니다.
+지금은 unittest 도구도 IDE에 내장되어 있으며 CI와 CD를 위한 서비스도 충분하고, test automation tool도 충분하기 때문에 마음만 먹으면 Agile 시스템을 도입할 수 있습니다.
+빅테크 기업도 MS Azure나 atlassian등의 Agile tool(시스템)을 사용하여 개발합니다.
 
-## 4. Testing Hierarchy and Strategy
-Agile testing에는 전략이 필요합니다.
-bottom & up 방식으로 가장 작은 부분부터 큰 부분으로 테스트를 수행합니다.
-테스트 피라미드 가장 바탕이 되는 것은 unit test 이며 이 단계에서 unit은 보통 함수(method or function)를 말합니다.
-우선 모든 함수가 unit test를 통과해야만 컴포넌트 단위 테스트를 진행합니다.
-함수가 오동작하는 이상 그 상위 테스트를 진행할 필요가 없습니다.
-그러므로 모든 테스트의 바탕은 unit test가 됩니다.
-즉, 모든 함수에 대해 unit test code를 작성해야 할 뿐만 아니라 함수 하나 당 다양한 입력을 주는 unit test code를 작성해야 합니다.
+## 4. The Cost to Fix defects
+오래된 defects(버그)일수록 버그 수정 비용이 기하급수적으로 올라갑니다.
+요구사항 분석 단계에서 요구사항과 다른 기능을 스펙 문서로 만들어 개발팀에 전달하면 시간이 지날 수록 큰 비용을 치르게됩니다.
+마찬가지로 코딩 단계에서 버그가 주입된 후 QA팀에서도 버그를 발견하지 못하고 배포하게되면 비용이 많이 듭니다.
+**버그를 발견하기** 위해 재현 환경 구축에도 시간이 걸리고
+**원인을 찾는** 디버깅에도 시간도 오래걸립니다.
+원인을 찾아서 코드 위치를 찾기만 하면 코드 수정이 쉬운 경우가 대부분입니다.
+(설계에 문제가 있지 않는 이상)
 
-예를들면 Login(string userID) 함수의 unit test code는 아래와 같이 다양한 입력 값에 따라 예상한 결과가 나오는지 확인해야 합니다.
+가장 큰 비용은 C/S 대응과 회복하기 어려운 기업 신뢰도 하락일 것입니다.
+
+
+![CostToFixDefects](CostToFixDefects.png)
+
+심지어 아무도 버그가 주입된지도 모른채 몇 년 후 사용자로부터 버그가 보고되는 경우도 있다.
+
+## 5. Testing Strategy
+### Testing Hierarchy
+![Testing Hierarchy](testingPyramid.png)
+
+Testing에는 전략이 필요합니다.
+아래에서 위로(bottom & up) 가장 작은 단위부터 큰 단위로 테스트를 수행합니다.
+unit test의 unit은 보통 함수(method or function)를 말합니다.
+모든 함수가 unit test를 통과해야만 그 다음 단계 컴포넌트나 모듈, 기능 단위 테스트를 진행할 수 있습니다.
+함수가 오동작하는 이상 그 상위 테스트는 진행할 필요가 없습니다.
+나무는 뿌리가 튼튼해야 쓰러지지 않는 것처럼 소프트웨어 퀄리티도 unit test 위에 세워집니다.
+
+Manual & Exploratory Tests를 제외하고 모든 하위 테스트는 컴퓨터가 수행하는 것이 좋습니다. UI 테스트도 부분적으로는 자동화가 가능합니다.
+
+## 5. Unittest
+
+모든 함수에 대해 unit test code를 작성해야 할 뿐만 아니라 함수 하나 하나마다 다양한 입력을 넣어 원하는 결과가 제대로 나오는지 확인하기 위해 unit test code를 작성해야 합니다.
+
+예를들어 create_email() 함수를 작성했다면 다양한 입력을 넣어보는 unittest code를 작성해서 예상한 결과가 나오는지 확인해야 합니다.
+
+``` 
+bool create_email(string candidate_email)
+```
 
 Input | Type
   ------|------
@@ -136,27 +179,55 @@ Input | Type
  "~!@#$%^&*()_+{}|\\/?" | exceptional input
 
 
------
+``` go
+//함수에 대해서 성공하는 입력, 실패하는 입력, edge 값 입력, 예외를 발생시키는 입력을 넣는 unittest의 예
 
-하나의 함수에 대해서 성공하는 입력, 실패하는 입력, edge 값 입력, 예외를 발생시키는 입력을 넣는 unit test
+// 1
+func Test_영문숫자입력시_성공하는지() {
+    assert.Equal( succeed, create_email("abc123@a.com") )
+}
+// 2
+func Test_숫자를첫글자로입력시_canNotBeNumberFirst_에러나는지() {
+    assert.Equal( canNotBeNumberFirst, create_email("123abc@a.com") )
+}
+// 3
+func Test_한글입력시_onlyEnglishError_에러나는지() {
+    assert.Equal( onlyEnglishError, create_email("한글@a.com") )
+}
+// 4
+func Test_empty입력시_canNotBeEmpty_에러나는지() {
+    assert.Equal( canNotBeEmpty, create_email("") )
+}
+// 5
+func Test_At이없을때_mustIncludeAt_에러나는지() {
+    assert.Equal( mustIncludeAt, create_email("abc.a.com") )
+}
+// 6
+func Test_domain에dot이없을때_invalidDomain_에러나는지() {
+    assert.Equal( invalidDomain, create_email("abc@a") )
+}
+// 7
+func Test_domain에dot이없을때_invalidDomain_에러나는지() {
+    assert.Equal( invalidDomain, create_email("abc@a") )
+}
+// 8
+func Test_특수문자입력시_notAllowSpecialChar_에러나는지() {
+    var allowSpecCharTable[] = {'_'}
+    var notAllowSpecCharTable[] = {'~', '`', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '+', '=', '[', ']', '\', '|', ';', ':', '\'', ',' '<', '.', '>', '/', '?'}
+    
+    for _, char := range allowSpecCharTable {
+        assert.Equal( succeed, create_email(char + "@a.com") )
+    }
 
+    for _, char := range notAllowSpecCharTable {
+        assert.Equal( notAllowSpecialChar, create_email(char + "@a.com") )
+    }
+}
+```
 
-
-![Testing Hierarchy](testingPyramid.png)
-
-
-### 테스트 시나리오와 경우의 수
-[바둑판에서 배치 가능한 경우의 수](/https://www.a-ha.io/questions/408e574152f2327099f1f53fe4454f4f)는 10의 171제곱의 수입니다. 우주 전체 원자의 갯수 10의 80승보다 훨씬 많습니다.
-현실에서 일어날 수 있는 모든 시나리오 경우의 수를 테스트하는 것은 어렵기 때문에 여기에도 전략이 필요합니다.
-
-## 4. The Cost of Bug Fix
-심지어 아무도 버그가 주입된지도 모른채 몇 년 후 사용자로부터 버그가 보고되는 경우도 있다.
-
-### 
+## 6. TDD
 > **버그 생명 주기**
 > bug injection -> bug discovery -> bug found -> bug fixed
 
 
-## 5. Unittest
-
-2022-11-01
+2022-11-04
