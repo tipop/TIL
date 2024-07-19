@@ -1,0 +1,80 @@
+<div class="main-content">
+  <h1>Inventory</h1>
+  <div class="controls">
+    <select id="sourceDropdown">
+      <option value="All Sources">All Sources</option>
+      <option value="WSUS">WSUS</option>
+      <option value="ThirdParty">ThirdParty</option>
+    </select>
+    <input type="text" id="searchInput" placeholder="Search...">
+    <button id="addFilterBtn">Add filter</button>
+    <select class="status-dropdown" id="statusDropdown">
+      <option value="">To status</option>
+      <option value="Testing">Testing</option>
+      <option value="Approved">Approved</option>
+      <option value="Unapproved">Unapproved</option>
+      <option value="Ignored">Ignored</option>
+      <option value="Downloading">Downloading</option>
+      <option value="Incomplete">Incomplete</option>
+    </select>
+  </div>
+  
+  <div class="table-container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th data-sort="id"><input type="checkbox" id="checkAll"></th>
+          <th data-sort="title">ID</th>
+          <th data-sort="source">Title</th>
+          <th data-sort="software">Source</th>
+          <th data-sort="language">Software</th>
+          <th data-sort="severity">Language</th>
+          <th data-sort="os">Severity</th>
+          <th data-sort="architecture">OS</th>
+          <th data-sort="status">Architecture</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+        <!-- 더미 데이터 파일 로드 -->
+      </tbody>
+    </table>
+  </div>
+
+  <div class="details-section" id="detailsSection">
+    <div class="details-header">
+      <h2 id="detailsTitle">Details</h2>
+    </div>
+    <div class="details-tabs">
+      <button class="active" data-tab="description">Description</button>
+      <button data-tab="test">Test</button>
+      <button data-tab="logs">Logs</button>
+    </div>
+    <div class="details-content active" id="description">
+      <!-- Description content -->
+    </div>
+    <div class="details-content" id="test">
+      <!-- Test content -->
+      <p>Change Status:</p>
+      <select id="testStatus">
+        <option value="Pending">Pending</option>
+        <option value="Testing">Testing</option>
+        <option value="Approved">Approved</option>
+        <option value="Rejected">Rejected</option>
+      </select>
+      <p>Notes:</p>
+      <textarea id="testNotes" rows="4" cols="50"></textarea>
+      <p>Required UI:</p>
+      <input type="text" id="requiredUI">
+      <p>Required Reboot:</p>
+      <input type="text" id="requiredReboot">
+      <p>UI Auto Script:</p>
+      <input type="text" id="uiAutoScript">
+      <p>Applicability Rules (XML):</p>
+      <textarea id="applicabilityRules" rows="4" cols="50"></textarea>
+    </div>
+    <div class="details-content" id="logs">
+      <!-- Logs content -->
+    </div>
+  </div>
+</div>
