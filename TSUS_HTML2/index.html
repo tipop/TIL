@@ -1,0 +1,423 @@
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link rel="stylesheet" as="style" onload="this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" />
+    <title>Galileo Design</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function openTab(event, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            event.currentTarget.classList.add("active");
+        }
+    </script>
+</head>
+<body>
+    <div class="relative flex size-full min-h-screen flex-col bg-[#1A1A1A] dark group/design-root overflow-x-hidden" style='font-family: Inter, "Noto Sans", sans-serif;'>
+        <div class="layout-container flex h-full grow flex-col">
+            <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#2E2E2E] px-10 py-3">
+                <div class="flex items-center gap-8">
+                    <div class="flex items-center gap-4 text-[#FFFFFF]">
+                        <h2 class="text-[#FFFF2F] text-lg font-bold leading-tight tracking-[-0.015em]">TSUS</h2>
+                    </div>
+                    <div class="flex items-center gap-9">
+                        <a class="text-[#FFFFFF] text-sm font-medium leading-normal" href="#">Dashboard</a>
+                        <a class="text-[#FFFFFF] text-sm font-medium leading-normal" href="#">Patches</a>
+                        <a class="text-[#FFFFFF] text-sm font-medium leading-normal" href="#">Package</a>
+                        <a class="text-[#FFFFFF] text-sm font-medium leading-normal" href="#">Settings</a>
+                        <a class="text-[#FFFFFF] text-sm font-medium leading-normal" href="#">Account</a>
+                        <a class="text-[#FFFFFF] text-sm font-medium leading-normal" href="#">Log</a>
+                    </div>
+                </div>
+                <div class="flex flex-1 justify-end gap-8">
+                    <label class="flex flex-col min-w-40 !h-10 max-w-64">
+                        <div class="flex w-full flex-1 items-stretch rounded-xl h-full">
+                            <div class="text-[#999999] flex border-none bg-[#2E2E2E] items-center justify-center pl-4 rounded-l-xl border-r-0" data-icon="MagnifyingGlass" data-size="24px" data-weight="regular">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                                    <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+                                </svg>
+                            </div>
+                            <input placeholder="Search patches" class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#FFFFFF] focus:outline-0 focus:ring-0 border-none bg-[#2E2E2E] focus:border-none h-full placeholder:text-[#999999] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal" value="" />
+                        </div>
+                    </label>
+                    <div class="flex gap-2">
+                        <button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#2E2E2E] text-[#FFFFFF] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+                            <div class="text-[#FFFFFF]" data-icon="Bell" data-size="20px" data-weight="regular">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                                    <path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"></path>
+                                </svg>
+                            </div>
+                        </button>
+                        <button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#2E2E2E] text-[#FFFFFF] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+                            <div class="text-[#FFFFFF]" data-icon="Question" data-size="20px" data-weight="regular">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                                    <path d="M140,180a12,12,0,1,1-12-12A12,12,0,0,1,140,180ZM128,72c-22.06,0-40,16.15-40,36v4a8,8,0,0,0,16,0v-4c0-11,10.77-20,24-20s24,9,24,20-10.77,20-24,20a8,8,0,0,0-8,8v8a8,8,0,0,0,16,0v-.72c18.24-3.35,32-17.9,32-35.28C168,88.15,150.06,72,128,72Zm104,56A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"></path>
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://cdn.usegalileo.ai/sdxl10/c4f32a93-e823-49d6-ba32-ecaee9655308.png");'></div>
+                </div>
+            </header>
+            <div class="gap-1 px-6 flex flex-1 justify-center py-5">
+                <div class="layout-content-container flex flex-col max-w-[1200px] flex-1">
+                    <div class="flex flex-wrap justify-between gap-3 p-4">
+                        <div class="flex min-w-72 flex-col gap-3">
+                            <p class="text-[#FFFFFF] tracking-light text-[32px] font-bold leading-tight">Patches</p>
+                            <p class="text-[#999999] text-sm font-normal leading-normal">1,000 patches</p>
+                        </div>
+                    </div>
+                    <div class="px-4 py-3">
+                        <label class="flex flex-col min-w-40 h-12 w-full">
+                            <div class="flex w-full flex-1 items-stretch rounded-xl h-full">
+                                <div class="text-[#999999] flex border-none bg-[#2E2E2E] items-center justify-center pl-4 rounded-l-xl border-r-0" data-icon="MagnifyingGlass" data-size="24px" data-weight="regular">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                                        <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+                                    </svg>
+                                </div>
+                                <input placeholder="Search patches" class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#FFFFFF] focus:outline-0 focus:ring-0 border-none bg-[#2E2E2E] focus:border-none h-full placeholder:text-[#999999] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal" value="" />
+                            </div>
+                        </label>
+                    </div>
+                    <div class="flex gap-3 p-3 flex-wrap pr-4">
+                        <div class="">
+                            <input type="date" id="start-date" class="bg-[#2E2E2E] text-[#FFFFFF] text-sm font-medium leading-normal rounded-xl px-1 py-1">
+                            <label for="end-date">~</label>
+                            <input type="date" id="end-date" class="bg-[#2E2E2E] text-[#FFFFFF] text-sm font-medium leading-normal rounded-xl px-1 py-1">
+                        </div>
+                        
+                        <button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-[#2E2E2E] pl-4 pr-2">
+                            <p class="text-[#FFFFFF] text-sm font-medium leading-normal">Source: All</p>
+                            <div class="text-[#FFFFFF]" data-icon="CaretDown" data-size="20px" data-weight="regular">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                                    <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
+                                </svg>
+                            </div>
+                        </button>
+                        <button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-[#2E2E2E] pl-4 pr-2">
+                            <p class="text-[#FFFFFF] text-sm font-medium leading-normal">Software: All</p>
+                            <div class="text-[#FFFFFF]" data-icon="CaretDown" data-size="20px" data-weight="regular">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                                    <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
+                                </svg>
+                            </div>
+                        </button>
+                        <button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-[#2E2E2E] pl-4 pr-2">
+                            <p class="text-[#FFFFFF] text-sm font-medium leading-normal">Severity: All</p>
+                            <div class="text-[#FFFFFF]" data-icon="CaretDown" data-size="20px" data-weight="regular">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                                    <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
+                                </svg>
+                            </div>
+                        </button>
+                        <button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-[#2E2E2E] pl-4 pr-2">
+                            <p class="text-[#FFFFFF] text-sm font-medium leading-normal">OS: All</p>
+                            <div class="text-[#FFFFFF]" data-icon="CaretDown" data-size="20px" data-weight="regular">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                                    <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
+                                </svg>
+                            </div>
+                        </button>
+                        <button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-[#2E2E2E] pl-4 pr-2">
+                            <p class="text-[#FFFFFF] text-sm font-medium leading-normal">Status: All</p>
+                            <div class="text-[#FFFFFF]" data-icon="CaretDown" data-size="20px" data-weight="regular">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                                    <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
+                                </svg>
+                            </div>
+                        </button>
+                        <div class="pagination-container">
+                            <button class="nav-button">&lt;</button>
+                            <p class="page-info">1 to 10 of 1000</p>
+                            <button class="nav-button">&gt;</button>
+                        </div>
+                    </div>
+                    <div class="px-4 py-3 @container">
+                        <div class="flex overflow-hidden rounded-xl border border-[#3D3D3D] bg-[#1A1A1A]">
+                            <table class="flex-1">
+                                <thead>
+                                    <tr class="bg-[#242424]">
+                                        <th class="px-4 py-3 text-left text-[#FFFFFF] text-sm font-medium leading-normal">DateRevised</th>
+                                        <th class="px-4 py-3 text-left text-[#FFFFFF] text-sm font-medium leading-normal">KB</th>
+                                        <th class="px-4 py-3 text-left text-[#FFFFFF] text-sm font-medium leading-normal">ID</th>
+                                        <th class="px-4 py-3 text-left text-[#FFFFFF] text-sm font-medium leading-normal">Title</th>
+                                        <th class="px-4 py-3 text-left text-[#FFFFFF] text-sm font-medium leading-normal">Source</th>
+                                        <th class="px-4 py-3 text-left text-[#FFFFFF] text-sm font-medium leading-normal">Software</th>
+                                        <th class="px-4 py-3 text-left text-[#FFFFFF] text-sm font-medium leading-normal">Severity</th>
+                                        <th class="px-4 py-3 text-left text-[#FFFFFF] text-sm font-medium leading-normal">Language</th>
+                                        <th class="px-4 py-3 text-left text-[#FFFFFF] text-sm font-medium leading-normal">OS</th>
+                                        <th class="px-4 py-3 text-left text-[#FFFFFF] text-sm font-medium leading-normal">Architecture</th>
+                                        <th class="px-4 py-3 text-left text-[#FFFFFF] text-sm font-medium leading-normal">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-t border-t-[#3D3D3D]">
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Nov 23, 2022</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">KB123</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">12345</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Security Update</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Microsoft</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Windows</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">High</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">English</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Windows 10</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">x64</td>
+                                        <td class="h-[36px] px-4 py-2 text-sm font-normal leading-normal">
+                                            <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 bg-[#2E2E2E] text-[#FFFFFF] text-sm font-medium leading-normal w-full">
+                                                <span class="truncate">Unapproved</span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-t border-t-[#3D3D3D]">
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Jan 01, 2023</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">KB001</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">1001</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Security Update</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Microsoft</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Windows</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">High</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">English</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Windows 10</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">x64</td>
+                                        <td class="h-[36px] px-4 py-2 text-sm font-normal leading-normal">
+                                            <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 bg-[#2E2E2E] text-[#FFFFFF] text-sm font-medium leading-normal w-full">
+                                                <span class="truncate">Unapproved</span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-t border-t-[#3D3D3D]">
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Feb 01, 2023</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">KB002</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">1002</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Feature Update</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Microsoft</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Windows</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Medium</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">English</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Windows 10</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">x64</td>
+                                        <td class="h-[36px] px-4 py-2 text-sm font-normal leading-normal">
+                                            <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 bg-[#2E2E2E] text-[#FFFFFF] text-sm font-medium leading-normal w-full">
+                                                <span class="truncate">Unapproved</span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-t border-t-[#3D3D3D]">
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Mar 01, 2023</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">KB003</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">1003</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Bug Fix</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Microsoft</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Windows</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Low</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">English</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Windows 10</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">x64</td>
+                                        <td class="h-[36px] px-4 py-2 text-sm font-normal leading-normal">
+                                            <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 bg-[#2E2E2E] text-[#FFFFFF] text-sm font-medium leading-normal w-full">
+                                                <span class="truncate">Testing</span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-t border-t-[#3D3D3D]">
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Apr 01, 2023</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">KB004</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">1004</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Security Update</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Microsoft</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Windows</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">High</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">English</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Windows 10</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">x64</td>
+                                        <td class="h-[36px] px-4 py-2 text-sm font-normal leading-normal">
+                                            <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 bg-[#2E2E2E] text-[#FFFFFF] text-sm font-medium leading-normal w-full">
+                                                <span class="truncate">Testing</span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-t border-t-[#3D3D3D]">
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">May 01, 2023</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">KB005</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">1005</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Feature Update</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Microsoft</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Windows</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Medium</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">English</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Windows 10</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">x64</td>
+                                        <td class="h-[36px] px-4 py-2 text-sm font-normal leading-normal">
+                                            <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 bg-[#2E2E2E] text-[#FFFFFF] text-sm font-medium leading-normal w-full">
+                                                <span class="truncate">Testing</span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-t border-t-[#3D3D3D]">
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Jun 01, 2023</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">KB006</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">1006</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Bug Fix</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Microsoft</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Windows</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Low</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">English</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Windows 10</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">x64</td>
+                                        <td class="h-[36px] px-4 py-2 text-sm font-normal leading-normal">
+                                            <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 bg-[#2E2E2E] text-[#FFFFFF] text-sm font-medium leading-normal w-full">
+                                                <span class="truncate">Downlading</span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-t border-t-[#3D3D3D]">
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Jul 01, 2023</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">KB007</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">1007</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Security Update</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Microsoft</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Windows</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">High</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">English</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Windows 10</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">x64</td>
+                                        <td class="h-[36px] px-4 py-2 text-sm font-normal leading-normal">
+                                            <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 bg-[#2E2E2E] text-[#FFFFFF] text-sm font-medium leading-normal w-full">
+                                                <span class="truncate">Incomplete</span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-t border-t-[#3D3D3D]">
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Aug 01, 2023</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">KB008</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">1008</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Feature Update</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Microsoft</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Windows</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Medium</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">English</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Windows 10</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">x64</td>
+                                        <td class="h-[36px] px-4 py-2 text-sm font-normal leading-normal">
+                                            <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 bg-[#2E2E2E] text-[#FFFFFF] text-sm font-medium leading-normal w-full">
+                                                <span class="truncate">Ignored</span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-t border-t-[#3D3D3D]">
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Sep 01, 2023</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">KB009</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">1009</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Bug Fix</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Microsoft</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Windows</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Low</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">English</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Windows 10</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">x64</td>
+                                        <td class="h-[36px] px-4 py-2 text-sm font-normal leading-normal">
+                                            <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 bg-[#2E2E2E] text-[#FFFFFF] text-sm font-medium leading-normal w-full">
+                                                <span class="truncate">Approved</span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-t border-t-[#3D3D3D]">
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Oct 01, 2023</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">KB010</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">1010</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Security Update</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Microsoft</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Windows</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">High</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">English</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">Windows 10</td>
+                                        <td class="h-[36px] px-4 py-2 text-[#999999] text-sm font-normal leading-normal">x64</td>
+                                        <td class="h-[36px] px-4 py-2 text-sm font-normal leading-normal">
+                                            <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 bg-[#2E2E2E] text-[#FFFFFF] text-sm font-medium leading-normal w-full">
+                                                <span class="truncate">Approved</span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layout-content-container flex flex-col">
+                <div class="tabs">
+                    <button class="tablink active" onclick="openTab(event, 'Description')">Description</button>
+                    <button class="tablink" onclick="openTab(event, 'Edit')">Edit</button>
+                    <button class="tablink" onclick="openTab(event, 'ApplicabilityRules')">ApplicabilityRules XML</button>
+                    <button class="tablink" onclick="openTab(event, 'UIAutomation')">UI Automation Script</button>
+                </div>
+                <div id="Description" class="tab active tab-content">
+                    <h3>Patch Description</h3>
+                    <p>KB123: Security Update for Windows 10</p>
+                    <p>This patch addresses critical security vulnerabilities in Windows 10 operating systems. It is recommended to install this update as soon as possible to protect your system from potential threats.</p>
+                    <ul>
+                        <li><strong>Release Date:</strong> November 23, 2022</li>
+                        <li><strong>Severity:</strong> High</li>
+                        <li><strong>Affected OS:</strong> Windows 10</li>
+                        <li><strong>Architecture:</strong> x64</li>
+                    </ul>
+                </div>
+                <div id="Edit" class="tab tab-content">
+                    <h3>Edit</h3>
+                    <div class="property-grid">
+                        <div class="property-item" style="grid-column: span 2;">
+                            <label for="title">Title:</label>
+                            <input type="text" id="title" value="Security Update" style="width: 100%;">
+                        </div>
+                        <div class="property-item">
+                            <label for="severity">Severity:</label>
+                            <select id="severity">
+                                <option value="high" selected>High</option>
+                                <option value="medium">Medium</option>
+                                <option value="low">Low</option>
+                            </select>
+                        </div>
+                        <div class="property-item">
+                            <label for="status">Status:</label>
+                            <select id="status">
+                                <option value="Unapproved" selected>Unapproved</option>
+                                <option value="Testing">Testing</option>
+                                <option value="Approved">Approved</option>
+                                <option value="Ignored">Ignored</option>
+                                <option value="Downloading">Downloading</option>
+                                <option value="Incomplete">Incomplete</option>
+                            </select>
+                        </div>
+                        <div class="property-item">
+                            <label for="reboot">Requires Reboot:</label>
+                            <input type="checkbox" id="reboot" checked>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="ApplicabilityRules" class="tab tab-content">
+                    <h3>IsInstalled</h3>
+                    <textarea placeholder="View or edit the ApplicabilityRules XML here."></textarea>
+                    <h3>IsInstallable</h3>
+                    <textarea placeholder="View or edit the ApplicabilityRules XML here."></textarea>
+                </div>
+                <div id="UIAutomation" class="tab tab-content">
+                    <h3>UI Automation Script View</h3>
+                    <textarea placeholder="View the UI Automation script here."></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
